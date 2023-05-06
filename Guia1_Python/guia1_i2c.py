@@ -17,7 +17,7 @@ while True:
     tempC = struct.unpack('<f', bytes(tempBytes))[0]
 
     # Imprimir la temperatura en la consola
-    print(f"{tempC}")
+    print(f"{tempC:.2f}")
 
     # Esperar 30 segundos antes de solicitar la siguiente lectura de temperatura
     time.sleep(30)
