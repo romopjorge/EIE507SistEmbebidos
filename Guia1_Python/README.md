@@ -1,1 +1,1 @@
-# Codigo comunicacion serial Guia 1 Python
+# Codigo comunicacion serial e i2c Guia 1 Python
