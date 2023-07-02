@@ -45,9 +45,9 @@ cat = form.getvalue("cat")
 db = Database("localhost", "5432", "postgres", "1234", "postgres")
 db.conectar()
 if cat == "0":
-    resultado = db.consultar("SELECT category.name_category, readings.value, category.symbol, readings.timestamp FROM readings JOIN category ON readings.id_category = category.id_category WHERE (readings.id_station = %s);" % sta)
+    resultado = db.consultar("SELECT category.name_category, readings.value, category.symbol, readings.timestamp FROM readings JOIN category ON readings.id_category = category.id_category WHERE (readings.id_station = %s) ORDER BY readings.id_reading DESC;" % sta)
 else:
-    resultado = db.consultar("SELECT category.name_category, readings.value, category.symbol, readings.timestamp FROM readings JOIN category ON readings.id_category = category.id_category WHERE (readings.id_station = %s AND readings.id_category = %s);" % (sta, cat))
+    resultado = db.consultar("SELECT category.name_category, readings.value, category.symbol, readings.timestamp FROM readings JOIN category ON readings.id_category = category.id_category WHERE (readings.id_station = %s AND readings.id_category = %s) ORDER BY readings.id_reading DESC;" % (sta, cat))
 df = pd.DataFrame()
 for x in resultado:
     df2 = pd.DataFrame(list(x)).T
