@@ -1,7 +1,7 @@
 import serial
 import requests
 
-url = "http://192.168.38.90/cgid-bin/first.py"
+url = "http://ip_maquina_virtual/cgid-bin/first.py"
 
 class Xbee:
     def __init__(self, port):
